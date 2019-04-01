@@ -101,6 +101,11 @@ int main(int argc, char* argv[])
 		std::cout << "set listenfd to nonblock error." << std::endl;
 		return -1;
 	}
+	
+	//复用地址和端口号
+	int on = 1;
+	setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (char *)&on, sizeof(on));
+	setsockopt(listenfd, SOL_SOCKET, SO_REUSEPORT, (char *)&on, sizeof(on));
 
     //初始化服务器地址
     struct sockaddr_in bindaddr;
@@ -121,12 +126,6 @@ int main(int argc, char* argv[])
 		close(listenfd);
         return -1;
     }
-	
-	//复用地址和端口号
-	int on = 1;
-	setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (char *)&on, sizeof(on));
-	setsockopt(listenfd, SOL_SOCKET, SO_REUSEPORT, (char *)&on, sizeof(on));
-		
 	
 	std::vector<pollfd> fds;
 	pollfd listen_fd_info;

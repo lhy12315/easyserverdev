@@ -43,8 +43,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 	
-	//连接成功以后，我们再将 clientfd 设置成非阻塞模式，
-	//不能在创建时就设置，这样会影响到 connect 函数的行为
+	//将 clientfd 设置成非阻塞模式
 	int oldSocketFlag = fcntl(clientfd, F_GETFL, 0);
 	int newSocketFlag = oldSocketFlag | O_NONBLOCK;
 	if (fcntl(clientfd, F_SETFL,  newSocketFlag) == -1)
@@ -166,8 +165,7 @@ nc -v -l 0.0.0.0 3000
           return -1;
       }
   	
-  	//连接成功以后，我们再将 clientfd 设置成非阻塞模式，
-  	//不能在创建时就设置，这样会影响到 connect 函数的行为
+  	//将 clientfd 设置成非阻塞模式	
   	int oldSocketFlag = fcntl(clientfd, F_GETFL, 0);
   	int newSocketFlag = oldSocketFlag | O_NONBLOCK;
   	if (fcntl(clientfd, F_SETFL,  newSocketFlag) == -1)
