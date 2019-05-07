@@ -249,7 +249,7 @@ int main(int argc, char* argv[])
 
 编译上述程序生成 **poll_server** 并运行，然后使用 **nc** 命令模拟三个客户端并给 **poll_server** 发送消息，效果如下：
 
-![](20190316115558.png)
+![](http://www.hootina.org/github_easyserverdev/20190316115558.png)
 
 
 
@@ -388,4 +388,4 @@ int main(int argc, char* argv[])
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

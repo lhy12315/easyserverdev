@@ -12,7 +12,7 @@ recv 函数本质上也并不是从网络上收取数据，而只是将内核缓
 
 可以用下面一张图来描述上述事实：
 
-![](20181217213229.png)
+![](http://www.hootina.org/github_easyserverdev/20181217213229.png)
 
 通过上图我们知道，不同的程序进行网络通信时，发送的一方会将内核缓冲区的数据通过网络传输给接收方的内核缓冲区。在应用程序 A 与 应用程序 B 建立了 TCP 连接之后，假设应用程序 A 不断调用 send 函数，这样数据会不断拷贝至对应的内核缓冲区中，如果 B 那一端一直不调用  recv 函数，那么 B 的内核缓冲区被填满以后，A 的内核缓冲区也会被填满，此时 A 继续调用 send 函数会是什么结果呢？ 具体的结果取决于该 socket 是否是阻塞模式。我们这里先给出结论：
 
@@ -437,7 +437,7 @@ listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
 
 示意图如下：
 
-![](20181218121002.png)
+![](http://www.hootina.org/github_easyserverdev/20181218121002.png)
 
 当每次 **blocking_client** 给 **blocking_server** 发数据以后，**blocking_server** 会应答 **blocking_server**，在每次应答的数据包中会带上自己的当前可用 TCP 窗口大小（看上文中结果从 **127.0.0.1.3000 > 127.0.0.1.40846** 方向的数据包的 **win** 字段大小变化），由于 TCP 流量控制和拥赛控制机制的存在，**blocking_server** 端的 TCP 窗口大小短期内会慢慢增加，后面随着接收缓冲区中数据积压越来越多， TCP 窗口会慢慢变小，最终变为 0。
 
@@ -555,7 +555,7 @@ int main(int argc, char* argv[])
 
 运行 **nonblocking_client**，运行一段时间后，由于对端和本端的 TCP 窗口已满，数据发不出去了，但是 send 函数不会阻塞，而是立即返回，返回值是 **-1**（Windows 系统上 返回 SOCKET_ERROR，这个宏的值也是 **-1**），此时得到错误码是 **EWOULDBLOCK**。执行结果如下：
 
-![](20181218143641.png)
+![](http://www.hootina.org/github_easyserverdev/20181218143641.png)
 
 
 
@@ -740,7 +740,7 @@ int main(int argc, char* argv[])
 
 执行结果与我们预期的一模一样， recv 函数在无数据可读的情况下并不会阻塞情绪，所以程序会一直有“**There is no data available now.**”相关的输出。
 
-![](20181218151618.png)
+![](http://www.hootina.org/github_easyserverdev/20181218151618.png)
 
 
 
@@ -750,4 +750,4 @@ int main(int argc, char* argv[])
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

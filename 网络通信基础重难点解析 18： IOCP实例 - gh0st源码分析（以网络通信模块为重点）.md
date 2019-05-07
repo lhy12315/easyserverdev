@@ -10,13 +10,15 @@
 
 相信很多人应该或多或少地听说过 **gh0st** 的大名，正如上面所说，它是一款远程控制软件，其原始版本的代码和作者已经无从考证，笔者手里这一份也来源于网络，我修正一些 bug 并作了一些优化，**仅供个人学习研究，不可用于商业用途和任何非法用途，否则后果自负**。
 
-代码下载链接：http://www.xyz.com/gh0st.zip
+代码下载方法：
+
+> 关注文章末尾的微信公众号后，回复关键字【gh0st】即可得到下载方法。
 
 #### 编译方法
 
 下载好代码以后，使用 Visual Studio 2013 打开源码目录下的 **gh0st.sln** 文件，打开后，整个解决方案有两个工程分别是 **gh0st_server** 和 **gh0st_client**。如下图所示：
 
-![](20181228114745.png)
+![](http://www.hootina.org/github_easyserverdev/20181228114745.png)
 
 
 
@@ -24,7 +26,7 @@
 
 
 
-![](20181228120518.png)
+![](http://www.hootina.org/github_easyserverdev/20181228120518.png)
 
 
 
@@ -44,19 +46,19 @@ TCHAR	*lpszHost = TEXT("127.0.0.1");
 
 我们先在本机上启动 **gh0st_server.exe**，然后在虚拟机中启动被控制端 **gh0st_client.exe**，很快 **gh0st_client** 就会连上 **gh0st_server**。这二者的启动顺序无所谓谁先谁后，因为 **gh0st_client** 有自动重连机制，被控制端连上控制端后，控制端（**gh0st_server**）的效果图如下所示：
 
-![](20181228131958.png)
+![](http://www.hootina.org/github_easyserverdev/20181228131958.png)
 
 当然，控制端可以同时控制多个被控制端，我这里在本机也开了一个被控制端，所以界面上会显示两个连上来的主机信息。
 
 我们选择其中一个主机，点击右键菜单中的某一项就可以进行具体的控制操作了：
 
-![](20181228132428.png)
+![](http://www.hootina.org/github_easyserverdev/20181228132428.png)
 
 下面截取一些控制画面：
 
 **文件管理**
 
-![](20181228132623.png)
+![](http://www.hootina.org/github_easyserverdev/20181228132623.png)
 
 
 
@@ -66,19 +68,19 @@ TCHAR	*lpszHost = TEXT("127.0.0.1");
 
 **远程终端**
 
-![](20181228132756.png)
+![](http://www.hootina.org/github_easyserverdev/20181228132756.png)
 
 
 
 **远程桌面**
 
-![](20181228132955.png)
+![](http://www.hootina.org/github_easyserverdev/20181228132955.png)
 
 
 
 当然，**远程桌面**功能不仅可以查看远程电脑当前正在操作的界面，同时还可以控制它的操作，在远程桌面窗口标题栏右键弹出菜单中选择【**控制屏幕**】即可，当然为了控制的流畅性，你可以自由选择被控制端传过来的图片质量，最高是 **32位真彩色**。
 
-![](20181228133523.png)
+![](http://www.hootina.org/github_easyserverdev/20181228133523.png)
 
 
 
@@ -185,7 +187,7 @@ int main(int argc, char **argv)
 
 这段逻辑可以梳理成如下的流程图：
 
-![](20181228154852.png)
+![](http://www.hootina.org/github_easyserverdev/20181228154852.png)
 
 
 
@@ -532,7 +534,7 @@ m_CompressionBuffer.Write(lpBuffer, dwIoSize);
 
 这个过程如下：
 
-![](20181228174657.png)
+![](http://www.hootina.org/github_easyserverdev/20181228174657.png)
 
 ##### gh0st 的通信协议
 
@@ -896,7 +898,7 @@ void CFileManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 
 下图是我们在控制端同时开启三个文件管理窗口和一个远程桌面窗口的效果截图：
 
-![](20181228194153.png)
+![](http://www.hootina.org/github_easyserverdev/20181228194153.png)
 
 
 
@@ -1327,7 +1329,7 @@ bool CIOCPServer::Initialize(NOTIFYPROC pNotifyProc, CMainFrame* pFrame, int nMa
 
 这些网络初始化步骤我们可以绘制成如下流程示意图：
 
-![](20181228203723.png)
+![](http://www.hootina.org/github_easyserverdev/20181228203723.png)
 
 与上一节介绍的完成端口中的对于接受连接的逻辑略有不用，**gh0st_server** 中专门新建了一个线程（线程函数 **ListenThreadProc** ）来处理新的连接，在这个线程函数中使用 Windows 的 **WSAEventSelect** 网络模型来检测新连接事件：
 
@@ -1521,7 +1523,7 @@ void CIOCPServer::OnAccept()
 
 这个函数中的操作是完成端口模型的关键，我们梳理成如下流程图：
 
-![](20181228210041.png)
+![](http://www.hootina.org/github_easyserverdev/20181228210041.png)
 
  
 

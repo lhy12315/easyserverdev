@@ -404,7 +404,7 @@ int main(int argc, _TCHAR* argv[])
 
 在 Visual Studio 2013 中编译该程序并运行，然后使用 Linux nc 命令模拟几个客户端连接该程序，效果如下所示：
 
-![](20190316222936.png)
+![](http://www.hootina.org/github_easyserverdev/20190316222936.png)
 
 
 
@@ -416,4 +416,4 @@ int main(int argc, _TCHAR* argv[])
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

@@ -90,13 +90,13 @@ ERRORS
 
 如下图所示：
 
-![1544686239939](D:/mycode/mybook/Chapter04/20181213153121.png)
+![1544686239939](http://www.hootina.org/github_easyserverdev/20181213153121.png)
 
 
 
 需要注意的是，这个方法不仅可以查 socket 函数也可以查看 Linux 下其他通用函数（如 fread）甚至一个 shell 命令（如 sleep）。以 sleep 为例，如果你想查程序中 sleep 函数的用法，由于Linux 内置有一个叫 sleep 的 shell 命令，如果你在 shell 窗口直接输入 **man sleep**，显示出来的默认会是 sleep 命令而不是我们要的 sleep 函数的帮助信息。
 
-![20181213154914.png](D:/mycode/mybook/Chapter04/20181213154914.png)
+![20181213154914.png](http://www.hootina.org/github_easyserverdev/20181213154914.png)
 
 
 
@@ -164,7 +164,7 @@ Windows 也有类似 man 手册的帮助文档，早些年 Visual Studio 会自�
 
 > 需要注意的是，建议读者在页面的底部将页面语言设置成English，这样搜索出来的内容会更准确更丰富。（本章节作者写于2018年12月13日，当读者实际看到本书内容时，可能这个页面已经改版了，请读者根据实际情况操作。）如下图所示：
 
-![20181213170610.png](D:/mycode/mybook/Chapter04/20181213170610.png)
+![20181213170610.png](http://www.hootina.org/github_easyserverdev/20181213170610.png)
 
 
 
@@ -193,5 +193,5 @@ Windows 也有类似 man 手册的帮助文档，早些年 Visual Studio 会自�
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)
 

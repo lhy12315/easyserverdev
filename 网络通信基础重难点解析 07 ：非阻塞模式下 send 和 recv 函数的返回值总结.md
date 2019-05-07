@@ -283,11 +283,11 @@ tcpdump -i any 'tcp port 3000'
 
 然后启动 **client** ，我们看下结果：
 
-![](20190313180033.png)
+![](http://www.hootina.org/github_easyserverdev/20190313180033.png)
 
 客户端确实是每隔 3 秒 **send** 一次数据。此时我们使用 **lsof -i -Pn** 命令查看连接状态，也是正常的：
 
-![](20190313180454.png)
+![](http://www.hootina.org/github_easyserverdev/20190313180454.png)
 
 然后，tcpdump 抓包结果输出中，除了连接时的三次握手数据包，再也无其他数据包，也就是说，**send** 函数发送 **0** 字节数据，**client** 的协议栈并不会把这些数据发出去。
 
@@ -303,7 +303,7 @@ listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
 
 因此，**server** 端也会一直没有输出，如果你用的是 gdb 启动 **server**，此时中断下来会发现，**server** 端由于没有数据会一直阻塞在 **recv** 函数调用处（**55** 行）。
 
-![](20190313180921.png)
+![](http://www.hootina.org/github_easyserverdev/20190313180921.png)
 
 
 
@@ -319,4 +319,4 @@ listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

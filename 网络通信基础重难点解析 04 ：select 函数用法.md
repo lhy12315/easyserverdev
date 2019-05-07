@@ -407,7 +407,7 @@ helloworld
 
 此时服务器端输出结果如下：
 
-![](20181224145113.png)
+![](http://www.hootina.org/github_easyserverdev/20181224145113.png)
 
 
 
@@ -417,13 +417,13 @@ helloworld
 
 客户端断开连接后，服务器端的运行输出结果：
 
-![](20181224150008.png)
+![](http://www.hootina.org/github_easyserverdev/20181224150008.png)
 
 
 
 以上代码是一个简单的服务器程序实现的基本流程，代码虽然简单，但是非常具有典型性和代表性，而且同样适用于客户端网络通信，如果用于客户端的话，只需要用 select 检测连接 socket 就可以了，如果连接 socket 有可读事件，调用 recv 函数来接收数据，剩下的逻辑都是一样的。上面的代码我们画一张流程图如下：
 
-![](20181224162509.png)
+![](http://www.hootina.org/github_easyserverdev/20181224162509.png)
 
 
 
@@ -567,7 +567,7 @@ nc -v -l 0.0.0.0 3000
 
 执行效果如下：
 
-![](20181224232652.png)
+![](http://www.hootina.org/github_easyserverdev/20181224232652.png)
 
 
 
@@ -581,7 +581,7 @@ nc -v -l 0.0.0.0 3000
 
 需要注意的是，这里我故意将客户端代码中 select 函数的超时时间设置为5秒，以足够我们在这 5 秒内给客户端发一个数据。如果我们在 5 秒内给客户端发送 **hello** 字符串：
 
-![](20181224232942.png)
+![](http://www.hootina.org/github_easyserverdev/20181224232942.png)
 
 
 
@@ -610,9 +610,9 @@ no event in specific time interval, count：31457
 
 除了第一次 **select_client** 会输出 **equal** 字样，后面再也没输出，而 **select** 函数以后的执行结果也是超时，即使此时服务器端再次给客户端发送数据。因此验证了：**select 函数执行后，确实会对三个参数的 fd_set 进行修改** 。**select** 函数修改某个 fd_set 集合可以使用如下两张图来说明一下：
 
-![](20181224235756.png)
+![](http://www.hootina.org/github_easyserverdev/20181224235756.png)
 
-  ![](20181225000010.png)
+  ![](http://www.hootina.org/github_easyserverdev/20181225000010.png)
 
 因此在调用 **select** 函数以后， 原来位置的的标志位可能已经不复存在，这也就是为什么我们的代码中调用一次 **select** 函数以后，即使服务器端再次发送数据过来，**select** 函数也不会再因为存在可读事件而返回了，因为第二次 clientfd 已经不在那个 read_set 中了。因此如果复用这些 fd_set 变量，必须按上文所说的重新清零再重新添加关心的 socket 到集合中去。
 
@@ -729,7 +729,7 @@ no event in specific time interval, count：31457
 
    执行结果确实如我们预期的，这里 select 函数只是简单地检测一下 clientfd，并不会等待固定的时间，然后立即返回。
 
-   ![](20181225004159.png)
+   ![](http://www.hootina.org/github_easyserverdev/20181225004159.png)
 
 
 
@@ -986,4 +986,4 @@ bool Connect(const char* pServer, short nPort)
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

@@ -258,7 +258,7 @@ LRESULT OnSocketEvent(HWND hWnd, WPARAM wParam, LPARAM lParam)
 
 Windows 服务程序的输出是使用 OutputDebugString 函数来输出到 Visual Studio 的 **Output 窗口**中去的，所以需要在调试模式下运行服务程序。**Output 窗口** 输出效果如下：
 
-![](20190318221652.png)
+![](http://www.hootina.org/github_easyserverdev/20190318221652.png)
 
 
 
@@ -285,4 +285,4 @@ Windows 服务程序的输出是使用 OutputDebugString 函数来输出到 Visu
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

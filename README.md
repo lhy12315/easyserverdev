@@ -10,11 +10,10 @@
 
 
 
-
 ------
 
 **本专题文章来源于『<font color=red>easyserverdev</font>』公众号，欢迎关注，转载或 fork 请保留版权信息。**
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](https://github.com/baloonwj/easyserverdev/blob/master/diagrams/articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)

@@ -461,13 +461,13 @@ recv from client:5,
 
 我们将代码 **79** 行和 **134** 行注释取消掉，使用 **ET 模式**再试一下，修改代码并重新编译，然后重新运行一下。再次使用 **nc** 命令模拟一个客户端连接后发送"**abcef**"，服务器只会有一次输出，效果如下：
 
-![](D:/mycode/mybook/Chapter04/20190401134302.png)
+![](http://www.hootina.org/github_easyserverdev/20190401134302.png)
 
 
 
 由于使用了 **ET 模式**，只会触发一次 POLLIN 事件，如果此时没有新数据到来，就再也不会触发。所以，如果我们继续给服务器发送一条新数据，如 **123**，服务器将再次触发一次 POLLIN 事件，然后打印出字母 **b**，效果如下：
 
-![](D:/mycode/mybook/Chapter04/20190401134555.png)
+![](http://www.hootina.org/github_easyserverdev/20190401134555.png)
 
 ![](D:/mycode/mybook/Chapter04/20190401134631.png)
 
@@ -491,4 +491,4 @@ recv from client:5,
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](diagrams\articlelogo.jpg)
+![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)
