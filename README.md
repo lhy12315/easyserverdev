@@ -22,7 +22,7 @@
 
 [网络通信基础重难点解析 07 ：非阻塞模式下 send 和 recv 函数的返回值总结](https://github.com/balloonwj/easyserverdev/blob/master/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%E9%87%8D%E9%9A%BE%E7%82%B9%E8%A7%A3%E6%9E%90%2007%20%EF%BC%9A%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F%E4%B8%8B%20send%20%E5%92%8C%20recv%20%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E6%80%BB%E7%BB%93.md)
 
-网络通信基础重难点解析 08 ：connect 函数在阻塞和非阻塞模式下的行为
+[网络通信基础重难点解析 08 ：connect 函数在阻塞和非阻塞模式下的行为](https://github.com/balloonwj/easyserverdev/blob/master/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%E9%87%8D%E9%9A%BE%E7%82%B9%E8%A7%A3%E6%9E%90%2008%20%EF%BC%9Aconnect%20%E5%87%BD%E6%95%B0%E5%9C%A8%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%A1%8C%E4%B8%BA.md)
 
 [网络通信基础重难点解析 09 ：阻塞与非阻塞的 socket 的各自适用场景](https://github.com/balloonwj/easyserverdev/blob/master/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%E9%87%8D%E9%9A%BE%E7%82%B9%E8%A7%A3%E6%9E%90%2009%20%EF%BC%9A%E9%98%BB%E5%A1%9E%E4%B8%8E%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%20socket%20%E7%9A%84%E5%90%84%E8%87%AA%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF.md)
 
